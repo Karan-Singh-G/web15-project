@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/container.css">
+    <link rel="stylesheet" href="./styles/container_second_div.css">
+    <link rel="stylesheet" href="./styles/lifestyle.css">
+    <link rel="stylesheet" href="./styles/button.css">
+    <link rel="stylesheet" href="./styles/animal.css">
+    <link rel="stylesheet" href="./styles/new_navbar.css">
+
+</head>
+<body>
+
+    <!-- navbar starts from here -->
+    <div id="navbar">
+      
+    </div>
+    <!-- navbar end s here -->
+  <div id="recipe_bogcontainer">
+   <div id="recipe_container">
+    <input type="text" id="input_term"/>
+    <button onclick="search_button()" id="search_term">searching</button>
+    <div id="show_result"></div>
+
+   </div>
+
+
+    <div id="footer">
+       
+        </div>
+       
+    </div>
+</body>
+</html>
+
+<script type="module" >
+   
+   import navbar from "./component/nevbar.js"
+ import footer from "./component/footer.js"
+ import {search_button, display_on_screen} from "./scripts/video.js"
+  let navbar_div=document.getElementById("navbar")
+  let footer_div=document.getElementById("footer")
+
+  let localstoragename=localStorage.getItem('myname');
+  let email=localStorage.getItem('myemail');
+  
+  
+  
+  if((localstoragename==null)&&(email==null)){
+      localstoragename="Email";
+      email="SignUp"
+      navbar_div.innerHTML=navbar(localstoragename,email)
+  }else{
+    navbar_div.innerHTML=navbar(localstoragename,email)
+  }
+ 
+
+  
+  footer_div.innerHTML=footer()
+
+
+    //  document.getElementById("myBtn").addEventListener("click", search_button);
+
+     let key=`AIzaSyB6nomHZL0STLnkj4xSbk5B0VaBSXIHV1E`;
+
+let show_result=document.getElementById("show_result")
+
+  let search_term=document.getElementById("search_term")
+  search_term.addEventListener('click',search_button)
+
+
+//  let link=`https://youtube.googleapis.com/youtube/v3/search?key=[YOUR_API_KEY]`;
+
+let search_button=async() =>{
+   try {
+    let searching_term=document.getElementById("input_term").value
+       let res= await fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${key}&q=${searching_term}&maxResult=25`);
+       let data= await res.json()
+       let videolist=data.items
+       display_on_screen(videolist)
+   } catch (error) {
+       console.log(error)
+   }
+ }
+
+ let display_on_screen=(videolist) =>{
+     let display_result=document.getElementById("show_result")
+       display_result.innerHTML=" "
+
+     videolist.forEach((ele)=>{
+        //  console.log(ele)
+       let card=document.createElement("div")
+       let videoid=ele.id.videoId
+       let Iframe=document.createElement("iframe");
+       Iframe.src=`https://www.youtube.com/embed/${videoid}`
+       card.append(Iframe)
+       display_result.append(card)
+
+      
+     })
+ }
+   
+      
+     
+   </script>

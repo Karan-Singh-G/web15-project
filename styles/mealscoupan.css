@@ -1,0 +1,158 @@
+#main_meals_photo_container_with_coupans{
+    width: 100%;
+    /* border: 1px solid black; */
+}
+#main_meals_photo_container_with_coupans_inside_container{
+    width: 70%;
+    /* border: 1px solid red; */
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+.sample{
+    height:500px;
+    width: 480px;
+    /* border: 1px solid brown; */
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 6px #e0e0e0;
+    margin-top: 30px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+.sample_picture_div{
+    width: 100%;
+    height: 55%;
+    border: 1px solid yellowgreen;
+    border-radius: 10px;
+}
+.sample_information_div{
+    width: 100%;
+    height: 28%;
+    /* border: 1px solid black; */
+    
+}
+.sample_coupan_div{
+    width: 100%;
+    height: 12%;
+    /* border: 1px solid blue; */
+    border-radius: 10px;
+    display: flex;
+}
+.sample_information_div_upper{
+    display: flex;
+}
+.heading_in_bold{
+    color: #666666;
+    font-weight: normal;
+    font-size: 18px;
+    cursor: pointer;
+}
+.heading_in_normal{
+    font-size: 14px;
+    font-weight: normal;
+    color: #999999;
+}
+.sample_information_div_middle{
+    margin-top: 10px;
+}
+.free_coupan_button{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+.coupan_button{
+width: 40%;
+height: 100%;
+/* border: 1px solid black; */
+font-family: 'Roboto', Arial;
+background-color: #f53838;
+padding: 8px 15px 8px 15px;
+text-align: center;
+    /* vertical-align: middle; */
+    display: block;
+    /* height: 25px;
+    width: 160px; */
+    /* line-height: 25px; */
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.div_for_stars{
+    width: 40%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+.sample_coupan_div_image_div{
+    width: 30%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+.sample_coupan_div_image_div_img1{
+    height: 100%;
+    width: 31%;
+}
+.sample_coupan_div_image_div_img2{
+    height: 100%;
+    width: 31%;
+}
+.sample_coupan_div_image_div_img3{
+    height: 100%;
+    width: 31%;
+}
+.discount_showing_div{
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid yellowgreen; */
+    text-align: center;
+}
+.expire_day_showing_div{
+    width: 30%;
+    height: 100%;
+    /* border: 1px solid rgb(205, 50, 197); */
+    text-align: center;
+}
+.discount_showing_div_in_red_text{
+    color: #fb2222;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 4px;
+}
+.expire_day_showing_div_showing_value{
+    color: #888888;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 4px;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.stars{
+    height: 100%;
+    width: 20%;
+    
+}
+.sample_information_div_last{
+    display: flex;
+    /* justify-content: space-between; */
+}
+.div_for_stars{
+    width: 30%;
+    display: flex;
+}
+.free_coupan_button{
+    width: 80%;
+    margin-bottom: 5px;
+}
+.sample_coupan_div{
+    margin-top: 8px;
+}
+.coupan_button{
+    border: 0px;
+}

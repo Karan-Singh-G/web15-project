@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/container.css">
+    <link rel="stylesheet" href="./styles/container_second_div.css">
+    <link rel="stylesheet" href="./styles/lifestyle.css">
+    <link rel="stylesheet" href="./styles/button.css">
+    <link rel="stylesheet" href="./styles/animal.css">
+    <link rel="stylesheet" href="./styles/new_navbar.css">
+    <link rel="stylesheet" href="./styles/signup.css">
+
+</head>
+<body>
+    <div id="navbar"></div>
+  
+   <div id="main_form_container">
+        <div id="main_form_container_inside">
+            <div id="main_form_container_inside_picture_container">
+                <div id="form_picture1">
+                    <div class="picture_inside">
+                        <img src="https://www.kindmeal.my/images/join_normal.png" alt="">
+                        <br>
+                      
+                    </div>
+                    Food Lover Sign Up
+                  
+                </div>
+                <div id="form_picture2">
+                    <div  class="picture_inside">
+                        <img src="https://www.kindmeal.my/images/join_shop.png" alt="">
+                        <br>
+                       
+                    </div>
+                    Restaurant Sign Up
+                  
+                </div>
+                <div id="form_picture3">
+                    <div id="h2_container"> <h2>Why KindMeal?</h2></div>
+                    <div>   <ul>
+                        <li>Exclusive meat-free deals</li>
+                        <li>Share yummy food moments</li>
+                        <li>Meet friendly food lovers</li>
+                        <li>Discover cool restaurants</li>
+                        <li>Email updates on tasty deals</li>
+                        <li>Instant coupons & dining</li>
+                        <li>No upfront payment, booking</li>
+                    </ul>
+                </div>
+                   
+                </div>
+            </div>
+            <div id="main_form_container_inside_form_container">
+            
+               <div id="form_upper_heading">
+                   <!-- <h2>Food Lover? Sign Up Now </h2> -->
+                   <h1>Food Lover? Sign Up Now </h1>
+                   <p>Discover tasty meat-free meals and dine instantly — no coupon payment, booking or printing is required </p>
+                   <p>KindMeal is a fun, exciting and cool new way for you to show your compassion towards animals. We collaborate with kind restaurants and cafes across the nation to bring you delicious meat-free foods that will not only help save precious animal lives, but improve your health and save your money at the same time!</p>
+               </div>
+                 
+
+              
+                <div id="my_main_form">
+                    <div class="form-style-2">
+                        <!-- <div class="form-style-2-heading"></div> -->
+                        <form action="" method="post">
+                        <label for="field1"><span> Your Name <span class="required"></span></span> <input type="text" id="my_name" class="input-field" name="field1" value="" /></label>
+                        <label for="field2"><span>Email <span class="required"></span></span><input type="email" id="my_email" class="input-field" name="field2" value="" /></label>
+                        
+                        <label for="field2"><span>Re-Email <span class="required"></span></span><input type="email" class="input-field" name="field2" value="" /></label>
+
+
+                        <label for="field2"><span>Password <span class="required"></span></span><input type="password" id="mypassword" class="input-field" name="field2" value="" /></label>
+
+
+                        <label for="field2"><span>UserName <span class="required"></span></span><input type="text" class="input-field" name="field2" value="" /></label>
+                        
+
+                        <!-- <input type="radio" name="gender" value="male" checked> Male<br>
+                        <input type="radio" name="gender" value="female"> Female<br> -->
+
+
+                           
+
+                        <label for="field4"><span>Country</span><select name="field4" class="select-field">
+                        <option value="">Select Country</option>
+                        <option value="India">India</option>
+                        <option value="Malayasi">Malayasi</option>
+                        <option value="Vietnam">Vietnam</option>
+                        </select></label>
+                       
+                        <label for="field4"><span>States</span><select name="field4" class="select-field">
+                            <option value="">Select state</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Uttarpradesh">Uttarpradesh</option>
+                            <option value="Madhyaprades">Madhyaprades</option>
+                            </select></label>
+
+                            <label for="field2"><span>Gender <span class="required"></span></span><input type="radio" name="gender" value="male" checked> Male
+                                <input type="radio" name="gender" value="female"> Female<br></label>
+                           
+                               
+                        </form>
+                       <button id="my_main_form_button"> Join Now</button>
+                      
+                        </div>
+                      
+                  
+                </div>
+                <!-- myform ebnding here -->
+               
+             
+              
+            </div>
+           
+        </div>
+
+   </div>
+  
+   <div id="amnimal_picure">
+    <div id="animal_picure_main_container">
+        <img src="https://www.kindmeal.my/images/banner_whykindmeal.png"/>
+    </div>
+</div>
+
+
+    <div id="footer">
+     
+       
+    </div>
+</body>
+</html>
+
+<script type="module">
+    import navbar from "./component/nevbar.js"
+ import footer from "./component/footer.js"
+  let navbar_div=document.getElementById("navbar")
+  let footer_div=document.getElementById("footer")
+ 
+  let name=localStorage.getItem('myname');
+  let email=localStorage.getItem('myemail');
+  
+  
+  
+  if((name==null)&&(email==null)){
+      name="Email";
+      email="SignUp"
+      navbar_div.innerHTML=navbar(name,email)
+  }else{
+    navbar_div.innerHTML=navbar(name,email)
+  }
+ 
+
+
+
+
+  footer_div.innerHTML=footer()
+
+  let submit=document.getElementById("my_main_form_button");
+  submit.addEventListener("click",function(){
+     let name=document.getElementById("my_name").value;
+     let email=document.getElementById("my_email").value
+     let password=document.getElementById("mypassword").value
+     localStorage.setItem("myname",name);
+     localStorage.setItem("myemail",email);
+     localStorage.setItem("mypassword",password)
+     alert("Your Account is Successfully Created ");
+
+     window.location.href="home.html"
+  })
+
+ 
+
+</script>
